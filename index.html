@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(206, 161, 248);
+        }
+        .container{
+            /* border: 1px solid; */
+            text-align: center;
+            width: 35%;
+            padding: 20px;
+            margin-top: 5%;
+            margin-left: 32%;
+            background-color: rgb(94, 25, 134);
+            box-shadow: 1px 1px 2px gray;
+            border-radius: 2cap;
+        }
+        .p1,.p2{
+            text-align: center;
+        }
+        .p1{
+            margin-top: 13%;
+        }
+    
+    </style>
+</head>
+<body>
+    <p id="para1"></p>
+    <p id="para2"></p>
+    <script>
+        var p1 = document.getElementById("para1")
+        var p2 = document.getElementById("para2")
+        p1.classList.add("p1")
+        p2.classList.add("p2")
+        
+        
+        function gettime(){
+            let a = new Date();
+            var date = a.getDate();
+            var time = a.toLocaleTimeString()
+
+            p1.innerText = "date:" +date;
+            p2.innerText = "time:" +time;
+            
+
+        }
+       gettime();
+      setInterval(gettime,1000);
+
+
+
+
+
+    //    #age caluculator
+
+      var div = document.createElement("div");
+      var h1 = document.createElement("h1");
+      h1.innerText = "AGE CALUCULATOR"
+      var ip1 = document.createElement("input");
+      var btn = document.createElement("button")
+      var display = document.createElement("p");
+      ip1.setAttribute("placeholder","enter you dob year")
+
+      div.classList.add("container")
+
+      
+      btn.innerText = "submit";
+      btn.addEventListener("click",function(){
+          var b = new Date();
+          var year = b.getFullYear()
+          console.log(year);
+          var ua = Number(ip1.value)
+
+          var age = year - ua;
+          display.innerText = "your age is sweet:"+age;
+          display.style.color = "rgb(231, 231, 8)"
+          console.log(age)
+      })
+
+       
+
+       div.append(h1)
+      div.append(ip1)
+      div.append(display)
+      div.append(btn)
+      document.body.append(div)
+       
+        
+
+    </script>
+</body>
+</html>
